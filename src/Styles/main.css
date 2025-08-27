@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
+
+body, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+     font-family: "Cardo", serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scrambled-word--container{
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.btn{
+    border: 0;
+    padding: 0.6rem 3rem;
+    border-radius: 10px;
+}
+
+.btn--primary{
+    background-color: rgb(13, 70, 167);
+    color: #fff;
+    box-shadow: 2px 2px 8px 1px rgb(14, 64, 150);
+    transition: 0.2s;
+}
+
+.btn--primary:hover{
+    box-shadow: 1px 1px 3px 1px rgb(14, 64, 150);
+}
+
+.input{
+    margin-right: 5rem;
+    width: 20rem;
+    padding: 0.5rem;
+    transition: padding 0.3s ease;
+    border: 1px solid #ccc;
+}
+
+.input:focus{
+    border: 1px solid #333;
+    outline: none;
+}
