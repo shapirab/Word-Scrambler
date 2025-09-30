@@ -1,3 +1,6 @@
+let scrambledWordHolder = document.getElementById('scrambled-word');
+let actionBtn = document.querySelector('.btn');
+
 let words = [
     'hello',
     'lesson',
@@ -10,7 +13,14 @@ let words = [
     'rate'
 ]
 
-console.log(scrambleWord(words[2]))
+setScrambledWordHolder();
+
+actionBtn.addEventListener('click', setScrambledWordHolder);
+
+function setScrambledWordHolder(){
+    let selectedWord = words[Math.floor(Math.random() * words.length)];
+    scrambledWordHolder.innerText = scrambleWord(selectedWord);
+}
 
 function scrambleWord(word){
     let wordArray = word.split('');
