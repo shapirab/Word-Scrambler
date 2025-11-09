@@ -3,6 +3,7 @@ let actionBtn = document.querySelector('.btn');
 let score = document.querySelector('.socre-value');
 let results = document.querySelector('.results-text');
 
+let scoreValue = 0;
 let words = [
     'hello',
     'lesson',
@@ -31,15 +32,18 @@ function setScrambledWordHolder(){
 function action(){
     let answer = document.querySelector('.input');
     if(isWordIdentified(answer.value)){
-        console.log('bravo')
-        score += 3;
+        scoreValue += 3;
         results.innerText = 'Bravo!';
     }
     else{
-        console.log('fuya')
+        results.innerText = 'Ouch! Better luck next time';
     }
 
     currentWordToScramble = selectWordToScramble();
+    answer.value = '';
+
+    score.innerText = scoreValue;
+    
     setScrambledWordHolder();   
 }
 
@@ -58,9 +62,6 @@ function scrambleWord(word){
 }
 
 function isWordIdentified(answer){
-    console.log('isWordIdentified(). answer:  ', answer)
-    console.log('isWordIdentified(). scrambledWord:  ', currentWordToScramble)
-
     if(!compareLength(answer, currentWordToScramble)){
         return false;
     }
