@@ -47,7 +47,7 @@ function action(){
     setScrambledWordHolder();   
 }
 
-
+//This works just fine. The only advantage the tutorial's algorithm has is that it does not require a new array.
 function scrambleWord(word){
     let wordArray = word.split('');
     let newWordArray= [];
@@ -61,7 +61,20 @@ function scrambleWord(word){
     return newWordArray.join('');
 }
 
+function tutorialScrambleFunc(array){
+    for(let i = array.length - 1; i > 0; i--){
+        let temp = array[i];
+        let randomIndex = Math.floor(Math.random() * (i+1));//so a number between 0 and i + 1
+        //switch the letters: what used to be in i is now what is in randomIndex, and what was in the randomIndex is now what used to be in i
+        array[i] = array[randomIndex];
+        array[randomIndex] = temp;
+    }
+    return array;
+}
+
 function isWordIdentified(answer){
+    //In the tutorial he is doing simply
+    //if(answer === currentWordToScramble){}
     if(!compareLength(answer, currentWordToScramble)){
         return false;
     }
